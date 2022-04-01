@@ -1,0 +1,43 @@
+// --- Media Queries ---
+
+@mixin on-mobile($width: 768px) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin on-tablet($width: 1024px) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+// --- Helpers ---
+
+@mixin size($width: 100%, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($top: 0, $right: 0, $bottom: $top, $left: $right) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin before() {
+  &::before {
+    content: '';
+    @include size();
+    @content;
+  }
+}
+
+@mixin after() {
+  &::after {
+    content: '';
+    @include size();
+    @content;
+  }
+}
