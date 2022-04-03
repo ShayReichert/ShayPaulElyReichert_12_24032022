@@ -1,17 +1,3 @@
-// --- Media Queries ---
-
-@mixin on-mobile($width: 768px) {
-  @media (max-width: $width) {
-    @content;
-  }
-}
-
-@mixin on-tablet($width: 1024px) {
-  @media (max-width: $width) {
-    @content;
-  }
-}
-
 // --- Helpers ---
 
 @mixin size($width: 100%, $height: $width) {

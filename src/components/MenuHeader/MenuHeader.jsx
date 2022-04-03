@@ -1,23 +1,23 @@
+import './MenuHeader.scss'
 import logo from '../../assets/logo.svg'
-import './Header.scss'
 
-function Header() {
+function MenuHeader() {
   return (
     <header className="header">
       <div className="header-wrapper">
         <img src={logo} className="logo" alt="logo" />
-        <ul className="menu">
+        <ul className="menu-header">
           <li>
-            <a href="#">Accueil</a>
+            <a href="/">Accueil</a>
           </li>
           <li>
-            <a href="#">Profil</a>
+            <a href="/">Profil</a>
           </li>
           <li>
-            <a href="#">Réglage</a>
+            <a href="/">Réglage</a>
           </li>
           <li>
-            <a href="#">Communauté</a>
+            <a href="/">Communauté</a>
           </li>
         </ul>
       </div>
@@ -25,4 +25,4 @@ function Header() {
   )
 }
 
-export default Header
+export default MenuHeader
