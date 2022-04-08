@@ -35,7 +35,7 @@ function MenuVertical() {
         </ul>
       </div>
       <div className="copyright">
-        Copyright, SportSee {new Date().getFullYear()}
+        <span>Copyright, SportSee {new Date().getFullYear()}</span>
       </div>
     </div>
   )
