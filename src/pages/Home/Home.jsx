@@ -1,69 +1,90 @@
 import './Home.scss'
 import Layout from '../../components/Layout/Layout'
 import MenuVertical from '../../components/MenuVertical/MenuVertical'
+import ActivityDailyChart from '../../components/ActivityDailyChart/ActivityDailyChart'
+import TimingChart from '../../components/TimingChart/TimingChart'
 
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  
-} from 'recharts'
-
-const data = [
+const dataChart1 = [
   {
-    name: '1',
+    day: '1',
     calories: 356,
     poids: 68,
   },
   {
-    name: '2',
+    day: '2',
     calories: 201,
     poids: 66,
   },
   {
-    name: '3',
+    day: '3',
     calories: 356,
     poids: 68,
   },
   {
-    name: '4',
+    day: '4',
     calories: 209,
     poids: 65,
   },
   {
-    name: '5',
+    day: '5',
     calories: 211,
     poids: 64,
   },
   {
-    name: '6',
+    day: '6',
     calories: 123,
     poids: 61,
   },
   {
-    name: '7',
+    day: '7',
     calories: 333,
     poids: 64,
   },
   {
-    name: '8',
+    day: '8',
     calories: 122,
     poids: 65,
   },
   {
-    name: '9',
+    day: '9',
     calories: 323,
     poids: 65,
   },
   {
-    name: '10',
+    day: '10',
     calories: 218,
     poids: 69,
+  },
+]
+
+const dataChart2 = [
+  {
+    day: 'L',
+    time: 10,
+  },
+  {
+    day: 'M',
+    time: 30,
+  },
+  {
+    day: 'M',
+    time: 30,
+  },
+  {
+    day: 'J',
+    time: 40,
+  },
+  {
+    day: 'V',
+    time: 68,
+  },
+  {
+    day: 'S',
+    time: 20,
+  },
+  {
+    day: 'D',
+    time: 50,
   },
 ]
 
@@ -82,61 +103,11 @@ function Home() {
         </section>
         <section className="charts-section">
           <div className="left">
-            <div className="chart-activity-daily">
-              <ResponsiveContainer width="99%" height={320}>
-                <BarChart
-                  // width={700}
-                  data={data}
-                  margin={{
-                    top: 112,
-                    right: 30,
-                    left: 20,
-                    bottom: 10,
-                  }}
-                  barSize={7}
-                  barGap={8}
-                >
-                  <text
-                    className="custom-rechart-title"
-                    x={20}
-                    y={33}
-                    fill="#20253A"
-                    textAnchor="left"
-                    dominantBaseline="central"
-                  >
-                    <tspan fontSize="15">Activité quotidienne</tspan>
-                  </text>
-                  <CartesianGrid vertical={false} strokeDasharray="3 3" />
-                  <XAxis axisLine={false} tickLine={false} dataKey="name" />
-                  <YAxis
-                    axisLine={false}
-                    tickLine={false}
-                    orientation="right"
-                  />
-                  <Tooltip
-                    separator=""
-                    labelStyle={{ color: 'green' }}
-                    wrapperStyle={{ left: 21 }}
-                  />
-                  <Legend verticalAlign="top" align="right" />
-                  <Bar
-                    unit="kg"
-                    dataKey="poids"
-                    fill="#282D30"
-                    legendType="circle"
-                    radius={[10, 10, 0, 0]}
-                    name="Poids (kg)"
-                  />
-                  <Bar
-                    unit="Kcal"
-                    dataKey="calories"
-                    fill="#E60000"
-                    legendType="circle"
-                    radius={[10, 10, 0, 0]}
-                    name="Calories brûlées (kCal)"
-                  />
-                </BarChart>
-              </ResponsiveContainer>
+            <div className="left-top">
+              <ActivityDailyChart data={dataChart1} />
+            </div>
+            <div className="left-bottom">
+              <TimingChart data={dataChart2} />
             </div>
           </div>
 

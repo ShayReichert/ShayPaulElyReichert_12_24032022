@@ -1,0 +1,52 @@
+@import '../../utils/styles/index.scss';
+
+.left-bottom {
+  .recharts-wrapper {
+    background: $red-01;
+
+    .custom-rechart-title {
+      font-weight: 500;
+    }
+
+    .recharts-layer {
+      .recharts-curve {
+        stroke: #ffffffab;
+      }
+      .recharts-text {
+        fill: #ffffffab !important;
+        font-weight: 500;
+      }
+    }
+
+    .recharts-tooltip-cursor {
+      stroke: #ffffffab;
+    }
+
+    .recharts-default-tooltip {
+      background-color: #fff !important;
+      border: none !important;
+      padding: 7px !important;
+
+      .recharts-tooltip-label {
+        @include visually-hidden();
+      }
+
+      .recharts-tooltip-item-list {
+        text-align: center;
+
+        .recharts-tooltip-item {
+          color: black !important;
+          font-size: 7px;
+
+          &:not(:last-of-type) {
+            margin-bottom: 1.5rem;
+          }
+        }
+
+        .recharts-tooltip-item-name {
+          @include visually-hidden();
+        }
+      }
+    }
+  }
+}

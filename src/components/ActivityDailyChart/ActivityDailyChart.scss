@@ -1,0 +1,74 @@
+@import '../../utils/styles/index.scss';
+
+.chart-activity-daily {
+  @include size(59vw, 320px);
+  background-color: $light-gray;
+  font-size: 1.4rem;
+  border-radius: 5px;
+
+  .recharts-wrapper {
+    border-radius: 5px;
+    
+    .recharts-legend-wrapper {
+      top: 2.3rem !important;
+
+      .recharts-surface {
+        @include size(8px);
+        margin-right: 10px !important;
+      }
+
+      .recharts-legend-item-text {
+        color: $gray !important;
+        font-weight: 500;
+      }
+    }
+
+    .custom-rechart-title {
+      font-weight: 500;
+    }
+
+    .recharts-layer {
+      .recharts-text {
+        fill: #9b9eac !important;
+        font-weight: 500;
+      }
+    }
+
+    .recharts-cartesian-grid-horizontal {
+      line:first-of-type {
+        stroke-dasharray: none;
+      }
+    }
+
+    .recharts-tooltip-cursor {
+      fill: #c4c4c480;
+    }
+
+    .recharts-default-tooltip {
+      background-color: $red-02 !important;
+      border: none !important;
+      padding: 7px !important;
+
+      .recharts-tooltip-label {
+        @include visually-hidden();
+      }
+
+      .recharts-tooltip-item-list {
+        text-align: center;
+
+        .recharts-tooltip-item {
+          color: $white !important;
+          font-size: 7px;
+
+          &:not(:last-of-type) {
+            margin-bottom: 1.5rem;
+          }
+        }
+
+        .recharts-tooltip-item-name {
+          @include visually-hidden();
+        }
+      }
+    }
+  }
+}
