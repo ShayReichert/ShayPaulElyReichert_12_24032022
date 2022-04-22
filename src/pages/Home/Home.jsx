@@ -4,6 +4,8 @@ import MenuVertical from '../../components/MenuVertical/MenuVertical'
 import ChartActivityDaily from '../../components/ChartActivityDaily/ChartActivityDaily'
 import ChartTiming from '../../components/ChartTiming/ChartTiming'
 import ChartActivityType from '../../components/ChartActivityType/ChartActivityType'
+import ChartScore from '../../components/ChartScore/ChartScore'
+
 
 const dataChart1 = [
   {
@@ -116,6 +118,19 @@ const dataChart3 = [
   },
 ]
 
+const dataChart4 = [
+  {
+    name: '29-35',
+    percent: 100,
+    fill: '#f8f7f7',
+  },
+  {
+    name: '25-29',
+    percent: 33,
+    fill: '#FF0000',
+  },
+]
+
 function Home() {
   return (
     <Layout>
@@ -139,7 +154,7 @@ function Home() {
 
               <ChartActivityType data={dataChart3} />
 
-              <div className="chart-score"></div>
+              <ChartScore data={dataChart4} />
             </div>
           </div>
 

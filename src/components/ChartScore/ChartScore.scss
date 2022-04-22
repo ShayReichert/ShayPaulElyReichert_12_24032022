@@ -1,0 +1,23 @@
+@import '../../utils/styles/index.scss';
+
+.chart-score {
+  width: 30%;
+
+  .recharts-wrapper {
+    background-color: $light-gray;
+    border-radius: 5px;
+  }
+
+  .recharts-area {
+    transform: scale(-1, 1) translateX(-100%);
+  }
+
+  .recharts-radial-bar-background-sector {
+    fill: #f8f7f7;
+    box-shadow: 1px 1px 1px #000;
+  }
+
+  .custom-rechart-title {
+    font-weight: 500;
+  }
+}
