@@ -1,29 +1,51 @@
 @import '../../utils/styles/index.scss';
 
-.left-bottom {
+.chart-activity-daily {
+  @include size(100%, 320px);
+  background-color: $light-gray;
+  font-size: 1.4rem;
+  border-radius: 5px;
+
   .recharts-wrapper {
-    background: $red-01;
+    border-radius: 5px;
+    
+    .recharts-legend-wrapper {
+      top: 2.3rem !important;
+
+      .recharts-surface {
+        @include size(8px);
+        margin-right: 10px !important;
+      }
+
+      .recharts-legend-item-text {
+        color: $gray !important;
+        font-weight: 500;
+      }
+    }
 
     .custom-rechart-title {
       font-weight: 500;
     }
 
     .recharts-layer {
-      .recharts-curve {
-        stroke: #ffffffab;
-      }
       .recharts-text {
-        fill: #ffffffab !important;
+        fill: #9b9eac !important;
         font-weight: 500;
       }
     }
 
+    .recharts-cartesian-grid-horizontal {
+      line:first-of-type {
+        stroke-dasharray: none;
+      }
+    }
+
     .recharts-tooltip-cursor {
-      stroke: #ffffffab;
+      fill: #c4c4c480;
     }
 
     .recharts-default-tooltip {
-      background-color: #fff !important;
+      background-color: $red-02 !important;
       border: none !important;
       padding: 7px !important;
 
@@ -35,7 +57,7 @@
         text-align: center;
 
         .recharts-tooltip-item {
-          color: black !important;
+          color: $white !important;
           font-size: 7px;
 
           &:not(:last-of-type) {

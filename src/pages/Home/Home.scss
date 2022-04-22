@@ -29,7 +29,19 @@
       .left {
         display: flex;
         flex-direction: column;
+        width: 65.2vw;
+
+        .left-bottom {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .chart-score {
+          width: 30%;
+          border: 1px solid red;
+        }
       }
+
       .right {
         border: 1px solid orange;
       }

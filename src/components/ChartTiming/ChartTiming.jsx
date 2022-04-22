@@ -1,4 +1,4 @@
-import './TimingChart.scss'
+import './ChartTiming.scss'
 import PropTypes from 'prop-types'
 
 import {
@@ -10,10 +10,10 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-function TimingChart(props) {
+function ChartTiming(props) {
   return (
-    <div className="chart-activity-daily">
-      <ResponsiveContainer width="30%" height={260}>
+    <div className="chart-timing">
+      <ResponsiveContainer width="100%" height={260}>
         <LineChart
           width={300}
           height={100}
@@ -22,7 +22,7 @@ function TimingChart(props) {
         >
           <text
             className="custom-rechart-title"
-            x={20}
+            x={30}
             y={33}
             fill="#ffffffab"
             textAnchor="left"
@@ -32,7 +32,7 @@ function TimingChart(props) {
           </text>
           <text
             className="custom-rechart-title"
-            x={20}
+            x={30}
             y={53}
             fill="#ffffffab"
             textAnchor="left"
@@ -61,8 +61,8 @@ function TimingChart(props) {
   )
 }
 
-export default TimingChart
+export default ChartTiming
 
-TimingChart.propTypes = {
+ChartTiming.propTypes = {
   data: PropTypes.array.isRequired,
 }

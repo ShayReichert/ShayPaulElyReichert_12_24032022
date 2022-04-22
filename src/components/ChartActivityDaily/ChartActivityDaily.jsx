@@ -1,4 +1,4 @@
-import './ActivityDailyChart.scss'
+import './ChartActivityDaily.scss'
 import PropTypes from 'prop-types'
 
 import {
@@ -12,8 +12,7 @@ import {
   Legend,
 } from 'recharts'
 
-function ActivityDailyChart(props) {
-
+function ChartActivityDaily(props) {
   return (
     <div className="chart-activity-daily">
       <ResponsiveContainer width="99%" height={320}>
@@ -30,7 +29,7 @@ function ActivityDailyChart(props) {
         >
           <text
             className="custom-rechart-title"
-            x={20}
+            x={30}
             y={33}
             fill="#20253A"
             textAnchor="left"
@@ -41,10 +40,7 @@ function ActivityDailyChart(props) {
           <CartesianGrid vertical={false} strokeDasharray="3 3" />
           <XAxis axisLine={false} tickLine={false} dataKey="day" />
           <YAxis axisLine={false} tickLine={false} orientation="right" />
-          <Tooltip
-            separator=""
-            wrapperStyle={{ left: 21 }}
-          />
+          <Tooltip separator="" wrapperStyle={{ left: 21 }} />
           <Legend verticalAlign="top" align="right" />
           <Bar
             unit="kg"
@@ -68,8 +64,8 @@ function ActivityDailyChart(props) {
   )
 }
 
-export default ActivityDailyChart
+export default ChartActivityDaily
 
-ActivityDailyChart.propTypes = {
+ChartActivityDaily.propTypes = {
   data: PropTypes.array.isRequired,
 }

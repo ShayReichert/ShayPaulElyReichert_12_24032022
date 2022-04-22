@@ -1,8 +1,9 @@
 import './Home.scss'
 import Layout from '../../components/Layout/Layout'
 import MenuVertical from '../../components/MenuVertical/MenuVertical'
-import ActivityDailyChart from '../../components/ActivityDailyChart/ActivityDailyChart'
-import TimingChart from '../../components/TimingChart/TimingChart'
+import ChartActivityDaily from '../../components/ChartActivityDaily/ChartActivityDaily'
+import ChartTiming from '../../components/ChartTiming/ChartTiming'
+import ChartActivityType from '../../components/ChartActivityType/ChartActivityType'
 
 const dataChart1 = [
   {
@@ -88,6 +89,33 @@ const dataChart2 = [
   },
 ]
 
+const dataChart3 = [
+  {
+    activity: 'Intensité',
+    level: 120,
+  },
+  {
+    activity: 'Vitesse',
+    level: 98,
+  },
+  {
+    activity: 'Force',
+    level: 86,
+  },
+  {
+    activity: 'Endurance',
+    level: 99,
+  },
+  {
+    activity: 'Energie',
+    level: 85,
+  },
+  {
+    activity: 'Cardio',
+    level: 65,
+  },
+]
+
 function Home() {
   return (
     <Layout>
@@ -104,10 +132,14 @@ function Home() {
         <section className="charts-section">
           <div className="left">
             <div className="left-top">
-              <ActivityDailyChart data={dataChart1} />
+              <ChartActivityDaily data={dataChart1} />
             </div>
             <div className="left-bottom">
-              <TimingChart data={dataChart2} />
+              <ChartTiming data={dataChart2} />
+
+              <ChartActivityType data={dataChart3} />
+
+              <div className="chart-score"></div>
             </div>
           </div>
 
