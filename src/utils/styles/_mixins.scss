@@ -36,3 +36,11 @@
   height: 1px;
   overflow: hidden;
 }
+
+// --- Media Queries ---
+
+@mixin on-laptop($width: 1280px) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

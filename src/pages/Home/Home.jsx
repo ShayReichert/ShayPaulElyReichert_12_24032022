@@ -5,7 +5,13 @@ import ChartActivityDaily from '../../components/ChartActivityDaily/ChartActivit
 import ChartTiming from '../../components/ChartTiming/ChartTiming'
 import ChartActivityType from '../../components/ChartActivityType/ChartActivityType'
 import ChartScore from '../../components/ChartScore/ChartScore'
+import NutrimentCard from '../../components/NutrimentCard/NutrimentCard'
+import energy from '../../assets/energy.svg'
+import chicken from '../../assets/chicken.svg'
+import apple from '../../assets/apple.svg'
+import cheeseburger from '../../assets/cheeseburger.svg'
 
+//  All Charts data (right)
 
 const dataChart1 = [
   {
@@ -120,14 +126,56 @@ const dataChart3 = [
 
 const dataChart4 = [
   {
-    name: '29-35',
+    name: 'hidden',
     percent: 100,
     fill: '#f8f7f7',
   },
   {
-    name: '25-29',
+    name: 'score',
     percent: 33,
     fill: '#FF0000',
+  },
+]
+
+// Nutriments Cards data (left)
+
+const nutrimentData = [
+  {
+    name: 'calories',
+    src: energy,
+    alt: 'energy',
+    key: 'calorieCount',
+    unit: 'kCal',
+  },
+  {
+    name: 'proteines',
+    src: chicken,
+    alt: 'chicken',
+    key: 'proteinCount',
+    unit: 'g',
+  },
+  {
+    name: 'glucides',
+    src: apple,
+    alt: 'apple',
+    key: 'carbohydrateCount',
+    unit: 'g',
+  },
+  {
+    name: 'lipides',
+    src: cheeseburger,
+    alt: 'cheeseburger',
+    key: 'lipidCount',
+    unit: 'g',
+  },
+]
+
+const nutrimentKeys = [
+  {
+    calorieCount: 1930,
+    proteinCount: 155,
+    carbohydrateCount: 290,
+    lipidCount: 50,
   },
 ]
 
@@ -144,6 +192,7 @@ function Home() {
             Félicitation ! Vous avez explosé vos objectifs hier 👏
           </p>
         </section>
+
         <section className="charts-section">
           <div className="left">
             <div className="left-top">
@@ -158,7 +207,19 @@ function Home() {
             </div>
           </div>
 
-          <div className="right">Calories column</div>
+          <div className="right">
+            <ul className="calory-wrapper">
+              {nutrimentData.map((nutriment, key) => {
+                return (
+                  <NutrimentCard
+                    nutriment={nutriment}
+                    count={nutrimentKeys[0][nutriment.key]}
+                    key={key}
+                  />
+                )
+              })}
+            </ul>
+          </div>
         </section>
       </div>
     </Layout>

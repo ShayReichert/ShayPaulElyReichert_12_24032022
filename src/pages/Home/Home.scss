@@ -7,8 +7,13 @@
   .content-wrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
     min-height: calc(100vh - 8rem);
-    padding: 4.7% 7.5%;
+    padding: 4.7% 4.2% 4.7% 7.5%;
+
+    @include on-laptop() {
+      padding: 4.7% 0 4.7% 7.5%;
+    }
 
     .title-section {
       margin-bottom: 7.7rem;
@@ -25,11 +30,16 @@
 
     .charts-section {
       display: flex;
+      justify-content: space-between;
 
       .left {
         display: flex;
         flex-direction: column;
-        width: 65.2vw;
+        width: 58vw;
+
+        .left-top {
+          margin-bottom: 3rem;
+        }
 
         .left-bottom {
           display: flex;
@@ -38,7 +48,11 @@
       }
 
       .right {
-        border: 1px solid orange;
+        width: 22vw;
+
+        .calory-wrapper {
+          margin: 0 3rem;
+        }
       }
     }
   }

@@ -38,7 +38,7 @@ function ChartScore(props) {
             textAnchor="middle"
             dominantBaseline="central"
           >
-            <tspan fontSize="26">12%</tspan>
+            <tspan fontSize="26">{props.data[1].percent}%</tspan>
           </text>
 
           <text
