@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { getUserDailyActivities } from '../../services/UserService'
-import { UserDailyActivities } from '../../models/User'
+import { getUserActivity } from '../../services/UserService'
+import { UserActivityDaily } from '../../models/UserActivityDaily'
 import './ChartActivityDaily.scss'
-// import { dataChartActivityDaily } from '../../mocks/chartsData'
+// import { mockDataActivityDaily } from '../../mocks/chartsData'
 
 import {
   ResponsiveContainer,
@@ -22,9 +22,9 @@ function ChartActivityDaily(props) {
   const [data, setData] = useState({})
 
   useEffect(() => {
-    getUserDailyActivities(props.userId).then(
+    getUserActivity(props.userId).then(
       (result) => {
-        setData(new UserDailyActivities(result.data))
+        setData(new UserActivityDaily(result.data))
         setIsLoaded(true)
       },
       (error) => {
@@ -32,7 +32,7 @@ function ChartActivityDaily(props) {
         setError(error)
       }
     )
-  }, [])
+  }, [props.userId])
 
   if (error) {
     return <div>Erreur : {error.message}</div>
@@ -43,7 +43,7 @@ function ChartActivityDaily(props) {
       <div className="chart-activity-daily">
         <ResponsiveContainer width="99%" height={320}>
           <BarChart
-            // data={dataChartActivityDaily}
+            // data={mockDataActivityDaily}
             data={data.getSessions()}
             margin={{
               top: 112,

@@ -1,5 +1,5 @@
 import './ChartScore.scss'
-import { dataChartScore } from '../../mocks/chartsData'
+import { mockDataScore } from '../../mocks/chartsData'
 
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts'
 
@@ -13,7 +13,7 @@ function ChartScore() {
           innerRadius="80%"
           outerRadius="80%"
           barSize={10}
-          data={dataChartScore}
+          data={mockDataScore}
         >
           <text
             className="custom-rechart-title"
@@ -34,7 +34,7 @@ function ChartScore() {
             textAnchor="middle"
             dominantBaseline="central"
           >
-            <tspan fontSize="26">{dataChartScore[1].percent}%</tspan>
+            <tspan fontSize="26">{mockDataScore[1].percent}%</tspan>
           </text>
 
           <text

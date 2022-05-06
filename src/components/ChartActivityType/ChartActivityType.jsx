@@ -1,5 +1,5 @@
 import './ChartActivityType.scss'
-import { dataChartActivityType } from '../../mocks/chartsData'
+import { mockDataActivityType } from '../../mocks/chartsData'
 
 import {
   Radar,
@@ -19,7 +19,7 @@ function ChartActivityType() {
           innerRadius="15%"
           outerRadius="90%"
           margin={{ top: 0, right: 40, left: 40, bottom: 0 }}
-          data={dataChartActivityType}
+          data={mockDataActivityType}
         >
           <PolarGrid />
           <PolarAngleAxis dataKey="activity" />

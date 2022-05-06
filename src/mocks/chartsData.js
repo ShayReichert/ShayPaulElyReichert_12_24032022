@@ -5,7 +5,7 @@ import cheeseburger from '../assets/cheeseburger.svg'
 
 //  All Charts data (right)
 
-const dataChartActivityDaily = [
+const mockDataActivityDaily = [
   {
     calories: 356,
     day: '1',
@@ -58,38 +58,38 @@ const dataChartActivityDaily = [
   },
 ]
 
-const dataChartTiming = [
+const mockDataChartTiming = [
   {
     day: 'L',
-    time: 10,
+    sessionLength: 10,
   },
   {
     day: 'M',
-    time: 30,
+    sessionLength: 30,
   },
   {
     day: 'M',
-    time: 30,
+    sessionLength: 30,
   },
   {
     day: 'J',
-    time: 40,
+    sessionLength: 40,
   },
   {
     day: 'V',
-    time: 68,
+    sessionLength: 68,
   },
   {
     day: 'S',
-    time: 20,
+    sessionLength: 20,
   },
   {
     day: 'D',
-    time: 50,
+    sessionLength: 50,
   },
 ]
 
-const dataChartActivityType = [
+const mockDataActivityType = [
   {
     activity: 'Intensité',
     level: 120,
@@ -116,7 +116,7 @@ const dataChartActivityType = [
   },
 ]
 
-const dataChartScore = [
+const mockDataScore = [
   {
     name: 'hidden',
     percent: 100,
@@ -131,7 +131,7 @@ const dataChartScore = [
 
 // Nutriments Cards data (left)
 
-const nutrimentData = [
+const mockDataNutriment = [
   {
     name: 'calories',
     src: energy,
@@ -162,7 +162,7 @@ const nutrimentData = [
   },
 ]
 
-const nutrimentKeys = [
+const mockKeysNutriment = [
   {
     calorieCount: 1930,
     proteinCount: 155,
@@ -173,10 +173,10 @@ const nutrimentKeys = [
 
 
 export {
-  dataChartActivityDaily,
-  dataChartTiming,
-  dataChartActivityType,
-  dataChartScore,
-  nutrimentData,
-  nutrimentKeys,
+  mockDataActivityDaily,
+  mockDataChartTiming,
+  mockDataActivityType,
+  mockDataScore,
+  mockDataNutriment,
+  mockKeysNutriment,
 }

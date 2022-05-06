@@ -1,7 +1,7 @@
 import './Home.scss'
 import React, { useState, useEffect } from 'react'
-import { getUserInfos } from '../../services/UserService'
-import { UserInfos } from '../../models/User'
+import { getUserMainData } from '../../services/UserService'
+import { UserInfos } from '../../models/UserInfos'
 import Layout from '../../components/Layout/Layout'
 import MenuVertical from '../../components/MenuVertical/MenuVertical'
 import ChartActivityDaily from '../../components/ChartActivityDaily/ChartActivityDaily'
@@ -9,18 +9,18 @@ import ChartTiming from '../../components/ChartTiming/ChartTiming'
 import ChartActivityType from '../../components/ChartActivityType/ChartActivityType'
 import ChartScore from '../../components/ChartScore/ChartScore'
 import CardNutriment from '../../components/CardNutriment/CardNutriment'
-import { nutrimentData, nutrimentKeys } from '../../mocks/chartsData'
+import { mockDataNutriment, mockKeysNutriment } from '../../mocks/chartsData'
 
 function Home() {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [data, setData] = useState({})
 
-  // let userId = 12
-  let userId = 18
+  let userId = 12
+  // let userId = 18
 
   useEffect(() => {
-    getUserInfos(userId).then(
+    getUserMainData(userId).then(
       (result) => {
         setData(new UserInfos(result.data))
         setIsLoaded(true)
@@ -30,7 +30,7 @@ function Home() {
         setError(error)
       }
     )
-  }, [])
+  }, [userId])
 
   let firstName = ''
   if (isLoaded && !error) {
@@ -58,7 +58,7 @@ function Home() {
               <ChartActivityDaily userId={userId} />
             </div>
             <div className="left-bottom">
-              <ChartTiming />
+              <ChartTiming userId={userId} />
 
               <ChartActivityType />
 
@@ -68,11 +68,11 @@ function Home() {
 
           <div className="right">
             <ul className="calory-wrapper">
-              {nutrimentData.map((nutriment, key) => {
+              {mockDataNutriment.map((nutriment, key) => {
                 return (
                   <CardNutriment
                     nutriment={nutriment}
-                    count={nutrimentKeys[0][nutriment.key]}
+                    count={mockKeysNutriment[0][nutriment.key]}
                     key={key}
                   />
                 )
