@@ -1,5 +1,5 @@
 import './ChartTiming.scss'
-import PropTypes from 'prop-types'
+import { dataChartTiming } from '../../mocks/chartsData'
 
 import {
   LineChart,
@@ -10,14 +10,14 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-function ChartTiming(props) {
+function ChartTiming() {
   return (
     <div className="chart-timing">
       <ResponsiveContainer width="100%" height={260}>
         <LineChart
           width={300}
           height={100}
-          data={props.data}
+          data={dataChartTiming}
           margin={{ top: 35, right: 15, left: 15, bottom: 10 }}
         >
           <text
@@ -62,7 +62,3 @@ function ChartTiming(props) {
 }
 
 export default ChartTiming
-
-ChartTiming.propTypes = {
-  data: PropTypes.array.isRequired,
-}

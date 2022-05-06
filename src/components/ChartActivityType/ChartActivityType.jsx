@@ -1,5 +1,5 @@
 import './ChartActivityType.scss'
-import PropTypes from 'prop-types'
+import { dataChartActivityType } from '../../mocks/chartsData'
 
 import {
   Radar,
@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-function ChartActivityType(props) {
+function ChartActivityType() {
   return (
     <div className="chart-activity-type">
       <ResponsiveContainer width="100%" height={260}>
@@ -19,7 +19,7 @@ function ChartActivityType(props) {
           innerRadius="15%"
           outerRadius="90%"
           margin={{ top: 0, right: 40, left: 40, bottom: 0 }}
-          data={props.data}
+          data={dataChartActivityType}
         >
           <PolarGrid />
           <PolarAngleAxis dataKey="activity" />
@@ -37,7 +37,3 @@ function ChartActivityType(props) {
 }
 
 export default ChartActivityType
-
-ChartActivityType.propTypes = {
-  data: PropTypes.array.isRequired,
-}

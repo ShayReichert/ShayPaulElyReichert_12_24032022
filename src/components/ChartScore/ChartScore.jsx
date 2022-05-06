@@ -1,13 +1,9 @@
 import './ChartScore.scss'
-import PropTypes from 'prop-types'
+import { dataChartScore } from '../../mocks/chartsData'
 
-import {
-  RadialBarChart,
-  RadialBar,
-  ResponsiveContainer,
-} from 'recharts'
+import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts'
 
-function ChartScore(props) {
+function ChartScore() {
   return (
     <div className="chart-score">
       <ResponsiveContainer width="100%" height={260}>
@@ -17,7 +13,7 @@ function ChartScore(props) {
           innerRadius="80%"
           outerRadius="80%"
           barSize={10}
-          data={props.data}
+          data={dataChartScore}
         >
           <text
             className="custom-rechart-title"
@@ -38,7 +34,7 @@ function ChartScore(props) {
             textAnchor="middle"
             dominantBaseline="central"
           >
-            <tspan fontSize="26">{props.data[1].percent}%</tspan>
+            <tspan fontSize="26">{dataChartScore[1].percent}%</tspan>
           </text>
 
           <text
@@ -76,7 +72,3 @@ function ChartScore(props) {
 }
 
 export default ChartScore
-
-ChartScore.propTypes = {
-  data: PropTypes.array.isRequired,
-}
