@@ -1,5 +1,5 @@
 import './MenuVertical.scss'
-import ActivityIcon from '../ActivityIcon/ActivityIcon'
+import IconActivity from '../IconActivity/IconActivity'
 import meditation from '../../assets/meditation.svg'
 import swimming from '../../assets/swimming.svg'
 import cycling from '../../assets/cycling.svg'
@@ -30,7 +30,7 @@ function MenuVertical() {
       <div className="menu-vertical">
         <ul className="activity-wrapper">
           {activitiesIcons.map((icon, key) => (
-            <ActivityIcon icon={icon} key={key} />
+            <IconActivity icon={icon} key={key} />
           ))}
         </ul>
       </div>

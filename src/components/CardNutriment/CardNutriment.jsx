@@ -1,9 +1,9 @@
-import './NutrimentCard.scss'
+import './CardNutriment.scss'
 import PropTypes from 'prop-types'
 
 
 
-function NutrimentCard(props) {
+function CardNutriment(props) {
   const { name, src, alt, unit } = props.nutriment
 
   return (
@@ -24,9 +24,9 @@ function NutrimentCard(props) {
   )
 }
 
-export default NutrimentCard
+export default CardNutriment
 
-NutrimentCard.propTypes = {
+CardNutriment.propTypes = {
   name: PropTypes.string,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
@@ -34,7 +34,7 @@ NutrimentCard.propTypes = {
   count: PropTypes.number.isRequired,
 }
 
-NutrimentCard.defaultProps = {
+CardNutriment.defaultProps = {
   name: '',
   src: '',
   alt: '',

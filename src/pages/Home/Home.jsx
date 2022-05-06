@@ -5,7 +5,7 @@ import ChartActivityDaily from '../../components/ChartActivityDaily/ChartActivit
 import ChartTiming from '../../components/ChartTiming/ChartTiming'
 import ChartActivityType from '../../components/ChartActivityType/ChartActivityType'
 import ChartScore from '../../components/ChartScore/ChartScore'
-import NutrimentCard from '../../components/NutrimentCard/NutrimentCard'
+import CardNutriment from '../../components/CardNutriment/CardNutriment'
 import energy from '../../assets/energy.svg'
 import chicken from '../../assets/chicken.svg'
 import apple from '../../assets/apple.svg'
@@ -211,7 +211,7 @@ function Home() {
             <ul className="calory-wrapper">
               {nutrimentData.map((nutriment, key) => {
                 return (
-                  <NutrimentCard
+                  <CardNutriment
                     nutriment={nutriment}
                     count={nutrimentKeys[0][nutriment.key]}
                     key={key}

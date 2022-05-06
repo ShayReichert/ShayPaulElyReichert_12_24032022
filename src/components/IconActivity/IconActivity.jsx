@@ -1,9 +1,9 @@
-import './ActivityIcon.scss'
+import './IconActivity.scss'
 import PropTypes from 'prop-types'
 
-function ActivityIcon(props) {
+function IconActivity(props) {
   const { name, src } = props.icon
-  
+
   return (
     <li>
       <a href="/">
@@ -13,15 +13,15 @@ function ActivityIcon(props) {
   )
 }
 
-export default ActivityIcon
+export default IconActivity
 
 
-ActivityIcon.propTypes = {
+IconActivity.propTypes = {
   name: PropTypes.string,
   src: PropTypes.string.isRequired,
 }
 
-ActivityIcon.defaultProps = {
+IconActivity.defaultProps = {
   name: '',
   src: '',
 }
