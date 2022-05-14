@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { getUserAverageSessions } from '../../services/UserService'
 import { UserTiming } from '../../models/UserTiming'
-// import { mockDataChartTiming } from '../../mocks/chartsData'
+import { getData } from '../../utils/scripts/helpers'
 import './ChartTiming.scss'
 
 import {
@@ -14,15 +14,16 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
+
 function ChartTiming(props) {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [data, setData] = useState({})
+  const [user, setUser] = useState({})
 
   useEffect(() => {
     getUserAverageSessions(props.userId).then(
       (result) => {
-        setData(new UserTiming(result.data))
+        setUser(new UserTiming(result.data))
         setIsLoaded(true)
       },
       (error) => {
@@ -31,7 +32,6 @@ function ChartTiming(props) {
       }
     )
   }, [props.userId])
-
 
 
   if (error) {
@@ -45,8 +45,7 @@ function ChartTiming(props) {
           <LineChart
             width={300}
             height={100}
-            // data={mockDataChartTiming}
-            data={data.getSessions()}
+            data={getData(user, 'Timing')}
             margin={{ top: 35, right: 15, left: 15, bottom: 10 }}
           >
             <text

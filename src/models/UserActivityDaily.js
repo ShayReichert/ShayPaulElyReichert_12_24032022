@@ -19,7 +19,7 @@ export class UserActivityDaily {
     })
   }
 
-  // #privateFunction
+  // #privateMethod
   #sortSessions(sessions) {
     const sortByMoreRecents = sessions.sort(function (a, b) {
       return new Date(b.day) - new Date(a.day)

@@ -9,6 +9,11 @@
     margin-bottom: 0;
   }
 
+  @include on-laptop() {
+    width: 23%;
+    margin-bottom: 0;
+  }
+
   .content {
     display: flex;
     align-items: center;
@@ -39,10 +44,6 @@
       }
       &.cheeseburger-icon {
         background-color: #fbeaef;
-      }
-
-      img {
-        @include size(16px, 20px);
       }
     }
 

@@ -6,18 +6,16 @@ import Layout from '../../components/Layout/Layout'
 import MenuVertical from '../../components/MenuVertical/MenuVertical'
 import ChartActivityDaily from '../../components/ChartActivityDaily/ChartActivityDaily'
 import ChartTiming from '../../components/ChartTiming/ChartTiming'
-import ChartActivityType from '../../components/ChartActivityType/ChartActivityType'
+import ChartPerformance from '../../components/ChartPerformance/ChartPerformance'
 import ChartScore from '../../components/ChartScore/ChartScore'
 import CardNutriment from '../../components/CardNutriment/CardNutriment'
 import { mockDataNutriment, mockKeysNutriment } from '../../mocks/chartsData'
+import { userId } from '../../utils/scripts/config'
 
 function Home() {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [data, setData] = useState({})
-
-  let userId = 12
-  // let userId = 18
 
   useEffect(() => {
     getUserMainData(userId).then(
@@ -60,7 +58,7 @@ function Home() {
             <div className="left-bottom">
               <ChartTiming userId={userId} />
 
-              <ChartActivityType />
+              <ChartPerformance userId={userId} />
 
               <ChartScore />
             </div>

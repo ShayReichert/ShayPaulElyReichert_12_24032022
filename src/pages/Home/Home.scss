@@ -12,7 +12,7 @@
     padding: 4.7% 4.2% 4.7% 7.5%;
 
     @include on-laptop() {
-      padding: 4.7% 0 4.7% 7.5%;
+      padding: 4.7% 4rem;
     }
 
     .title-section {
@@ -32,10 +32,22 @@
       display: flex;
       justify-content: space-between;
 
+      @include on-laptop() {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
       .left {
         display: flex;
         flex-direction: column;
         width: 58vw;
+
+        @include on-laptop() {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
 
         .left-top {
           margin-bottom: 3rem;
@@ -50,8 +62,20 @@
       .right {
         width: 22vw;
 
+        @include on-laptop() {
+          display: flex;
+          width: 100%;
+        }
+
         .calory-wrapper {
           margin: 0 3rem;
+
+          @include on-laptop() {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin: 5rem 0 0;
+          }
         }
       }
     }

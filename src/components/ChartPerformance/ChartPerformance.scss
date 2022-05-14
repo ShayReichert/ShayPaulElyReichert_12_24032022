@@ -1,11 +1,12 @@
 @import '../../utils/styles/index.scss';
 
-.chart-activity-type {
-  width: 30%;
+.chart-performance {
+  width: 31%;
 
   .recharts-wrapper {
     background-color: #282d30;
     border-radius: 5px;
+    text-transform: capitalize;
 
     .recharts-layer {
       text tspan {

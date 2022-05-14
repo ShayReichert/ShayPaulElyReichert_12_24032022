@@ -7,7 +7,6 @@ export async function getUserMainData(userId) {
   }
 }
 
-
 export async function getUserActivity(userId) {
   try {
     const response = await fetch(
@@ -23,6 +22,17 @@ export async function getUserAverageSessions(userId) {
   try {
     const response = await fetch(
       `http://localhost:3000/user/${userId}/average-sessions`
+    )
+    return await response.json()
+  } catch (error) {
+    return error
+  }
+}
+
+export async function getUserPerformance(userId) {
+  try {
+    const response = await fetch(
+      `http://localhost:3000/user/${userId}/performance`
     )
     return await response.json()
   } catch (error) {

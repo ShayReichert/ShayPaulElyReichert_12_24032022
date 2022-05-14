@@ -5,7 +5,7 @@ import cheeseburger from '../assets/cheeseburger.svg'
 
 //  All Charts data (right)
 
-const mockDataActivityDaily = [
+export const mockDataActivityDaily = [
   {
     calories: 356,
     day: '1',
@@ -58,7 +58,7 @@ const mockDataActivityDaily = [
   },
 ]
 
-const mockDataChartTiming = [
+export const mockDataChartTiming = [
   {
     day: 'L',
     sessionLength: 10,
@@ -89,34 +89,34 @@ const mockDataChartTiming = [
   },
 ]
 
-const mockDataActivityType = [
+export const mockDataPerformance = [
   {
-    activity: 'Intensité',
-    level: 120,
+    kind: 'Intensité',
+    value: 120,
   },
   {
-    activity: 'Vitesse',
-    level: 98,
+    kind: 'Vitesse',
+    value: 98,
   },
   {
-    activity: 'Force',
-    level: 86,
+    kind: 'Force',
+    value: 86,
   },
   {
-    activity: 'Endurance',
-    level: 99,
+    kind: 'Endurance',
+    value: 99,
   },
   {
-    activity: 'Energie',
-    level: 85,
+    kind: 'Energie',
+    value: 85,
   },
   {
-    activity: 'Cardio',
-    level: 65,
+    kind: 'Cardio',
+    value: 65,
   },
 ]
 
-const mockDataScore = [
+export const mockDataScore = [
   {
     name: 'hidden',
     percent: 100,
@@ -131,7 +131,7 @@ const mockDataScore = [
 
 // Nutriments Cards data (left)
 
-const mockDataNutriment = [
+export const mockDataNutriment = [
   {
     name: 'calories',
     src: energy,
@@ -162,7 +162,7 @@ const mockDataNutriment = [
   },
 ]
 
-const mockKeysNutriment = [
+export const mockKeysNutriment = [
   {
     calorieCount: 1930,
     proteinCount: 155,
@@ -170,13 +170,3 @@ const mockKeysNutriment = [
     lipidCount: 50,
   },
 ]
-
-
-export {
-  mockDataActivityDaily,
-  mockDataChartTiming,
-  mockDataActivityType,
-  mockDataScore,
-  mockDataNutriment,
-  mockKeysNutriment,
-}
