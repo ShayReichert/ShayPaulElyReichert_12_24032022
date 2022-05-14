@@ -1,3 +1,8 @@
+import energy from '../assets/energy.svg'
+import chicken from '../assets/chicken.svg'
+import apple from '../assets/apple.svg'
+import cheeseburger from '../assets/cheeseburger.svg'
+
 export class UserInfos {
   constructor(data) {
     this.id = data.id
@@ -7,11 +12,11 @@ export class UserInfos {
   }
 
   getFirstName() {
-    return `${this.userInfos.firstName}`
+    return this.userInfos.firstName
   }
 
   getScoreData() {
-    const percentage = this.todayScore * 100;
+    const percentage = this.todayScore * 100
 
     const dataScore = [
       {
@@ -31,5 +36,40 @@ export class UserInfos {
 
   getScorePercentage() {
     return this.todayScore * 100
+  }
+
+  getnutrimentInfos() {
+    const nutrimentInfos = [
+      {
+        name: 'calories',
+        src: energy,
+        alt: 'energy',
+        key: 'calorieCount',
+        unit: 'kCal',
+      },
+      {
+        name: 'proteines',
+        src: chicken,
+        alt: 'chicken',
+        key: 'proteinCount',
+        unit: 'g',
+      },
+      {
+        name: 'glucides',
+        src: apple,
+        alt: 'apple',
+        key: 'carbohydrateCount',
+        unit: 'g',
+      },
+      {
+        name: 'lipides',
+        src: cheeseburger,
+        alt: 'cheeseburger',
+        key: 'lipidCount',
+        unit: 'g',
+      },
+    ]
+
+    return nutrimentInfos
   }
 }

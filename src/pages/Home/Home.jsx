@@ -11,7 +11,7 @@ import {
   ChartScore,
   CardNutriment,
 } from '../../components'
-import { mockDataNutriment, mockKeysNutriment } from '../../mocks/chartsData'
+
 import { userId } from '../../utils/scripts/config'
 import { getData } from '../../utils/scripts/helpers'
 
@@ -34,9 +34,13 @@ function Home() {
   }, [userId])
 
   let firstName = ''
+  let nutrimentInfos = []
+  let nutrimentData = []
+
   if (isLoaded && !error) {
-    // firstName = user.getFirstName()
     firstName = getData(user, 'FirstName')
+    nutrimentInfos = getData(user, 'nutrimentInfos')
+    nutrimentData.push(getData(user, 'nutrimentData'))
   } else if (error) {
     console.error(error.message)
   }
@@ -70,11 +74,11 @@ function Home() {
 
           <div className="right">
             <ul className="calory-wrapper">
-              {mockDataNutriment.map((nutriment, key) => {
+              {nutrimentInfos.map((nutriment, key) => {
                 return (
                   <CardNutriment
                     nutriment={nutriment}
-                    count={mockKeysNutriment[0][nutriment.key]}
+                    count={nutrimentData[0][nutriment.key]}
                     key={key}
                   />
                 )

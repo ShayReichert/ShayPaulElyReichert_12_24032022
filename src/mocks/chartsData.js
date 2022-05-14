@@ -5,7 +5,7 @@ import cheeseburger from '../assets/cheeseburger.svg'
 
 //  All Charts data (right)
 
-export const mockDataFirstName = 'Thomas';
+export const mockDataFirstName = 'Thomas'
 
 export const mockDataActivityDaily = [
   {
@@ -131,11 +131,11 @@ export const mockDataScore = [
   },
 ]
 
-export const mockDataScorePercentage = 33;
+export const mockDataScorePercentage = 33
 
 // Nutriments Cards data (left)
 
-export const mockDataNutriment = [
+export const mockInfosNutriment = [
   {
     name: 'calories',
     src: energy,
@@ -166,11 +166,9 @@ export const mockDataNutriment = [
   },
 ]
 
-export const mockKeysNutriment = [
-  {
-    calorieCount: 1930,
-    proteinCount: 155,
-    carbohydrateCount: 290,
-    lipidCount: 50,
-  },
-]
+export const mockDataNutriment = {
+  calorieCount: 1930,
+  proteinCount: 155,
+  carbohydrateCount: 290,
+  lipidCount: 50,
+}

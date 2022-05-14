@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types'
 import MenuHeader from '../MenuHeader/MenuHeader'
-import "./Layout.scss";
+import './Layout.scss'
 
 function Layout(props) {
   return (
@@ -12,4 +13,12 @@ function Layout(props) {
   )
 }
 
-export default Layout;
+export default Layout
+
+Layout.propTypes = {
+  children: PropTypes.array.isRequired,
+}
+
+Layout.defaultProps = {
+  children: [],
+}
