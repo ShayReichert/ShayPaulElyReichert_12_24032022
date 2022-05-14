@@ -4,7 +4,6 @@ import { getUserAverageSessions } from '../../services/UserService'
 import { UserTiming } from '../../models/UserTiming'
 import { getData } from '../../utils/scripts/helpers'
 import './ChartTiming.scss'
-
 import {
   LineChart,
   Line,

@@ -4,7 +4,6 @@ import { getUserActivity } from '../../services/UserService'
 import { UserActivityDaily } from '../../models/UserActivityDaily'
 import { getData } from '../../utils/scripts/helpers'
 import './ChartActivityDaily.scss'
-
 import {
   ResponsiveContainer,
   BarChart,

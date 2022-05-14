@@ -5,6 +5,8 @@ import cheeseburger from '../assets/cheeseburger.svg'
 
 //  All Charts data (right)
 
+export const mockDataFirstName = 'Thomas';
+
 export const mockDataActivityDaily = [
   {
     calories: 356,
@@ -128,6 +130,8 @@ export const mockDataScore = [
     fill: '#FF0000',
   },
 ]
+
+export const mockDataScorePercentage = 33;
 
 // Nutriments Cards data (left)
 

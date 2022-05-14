@@ -2,25 +2,28 @@ import './Home.scss'
 import React, { useState, useEffect } from 'react'
 import { getUserMainData } from '../../services/UserService'
 import { UserInfos } from '../../models/UserInfos'
-import Layout from '../../components/Layout/Layout'
-import MenuVertical from '../../components/MenuVertical/MenuVertical'
-import ChartActivityDaily from '../../components/ChartActivityDaily/ChartActivityDaily'
-import ChartTiming from '../../components/ChartTiming/ChartTiming'
-import ChartPerformance from '../../components/ChartPerformance/ChartPerformance'
-import ChartScore from '../../components/ChartScore/ChartScore'
-import CardNutriment from '../../components/CardNutriment/CardNutriment'
+import {
+  Layout,
+  MenuVertical,
+  ChartActivityDaily,
+  ChartTiming,
+  ChartPerformance,
+  ChartScore,
+  CardNutriment,
+} from '../../components'
 import { mockDataNutriment, mockKeysNutriment } from '../../mocks/chartsData'
 import { userId } from '../../utils/scripts/config'
+import { getData } from '../../utils/scripts/helpers'
 
 function Home() {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [data, setData] = useState({})
+  const [user, setUser] = useState({})
 
   useEffect(() => {
     getUserMainData(userId).then(
       (result) => {
-        setData(new UserInfos(result.data))
+        setUser(new UserInfos(result.data))
         setIsLoaded(true)
       },
       (error) => {
@@ -32,7 +35,8 @@ function Home() {
 
   let firstName = ''
   if (isLoaded && !error) {
-    firstName = data.getFirstName()
+    // firstName = user.getFirstName()
+    firstName = getData(user, 'FirstName')
   } else if (error) {
     console.error(error.message)
   }
@@ -60,7 +64,7 @@ function Home() {
 
               <ChartPerformance userId={userId} />
 
-              <ChartScore />
+              <ChartScore userId={userId} />
             </div>
           </div>
 

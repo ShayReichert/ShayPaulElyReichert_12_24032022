@@ -4,7 +4,6 @@ import { getUserPerformance } from '../../services/UserService'
 import { UserPerformance } from '../../models/UserPerformance'
 import { getData } from '../../utils/scripts/helpers'
 import './ChartPerformance.scss'
-
 import {
   Radar,
   RadarChart,
