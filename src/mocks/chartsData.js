@@ -167,8 +167,8 @@ export const mockInfosNutriment = [
 ]
 
 export const mockDataNutriment = {
-  calorieCount: 1930,
-  proteinCount: 155,
-  carbohydrateCount: 290,
-  lipidCount: 50,
+  calorieCount: 1600,
+  proteinCount: 100,
+  carbohydrateCount: 200,
+  lipidCount: 10,
 }

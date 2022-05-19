@@ -15,7 +15,6 @@ function IconActivity(props) {
 
 export default IconActivity
 
-
 IconActivity.propTypes = {
   name: PropTypes.string,
   src: PropTypes.string.isRequired,

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { getUserAverageSessions } from '../../services/UserService'
+import { useApiRequest } from '../../services/ApiService'
 import { UserTiming } from '../../models/UserTiming'
 import { getData } from '../../utils/scripts/helpers'
 import './ChartTiming.scss'
@@ -13,28 +12,15 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-
 function ChartTiming(props) {
-  const [error, setError] = useState(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [user, setUser] = useState({})
+  const { data, error, isLoaded } = useApiRequest(
+    `${process.env.REACT_APP_API_ROOT}/user/${props.userId}/average-sessions`
+  )
 
-  useEffect(() => {
-    getUserAverageSessions(props.userId).then(
-      (result) => {
-        setUser(new UserTiming(result.data))
-        setIsLoaded(true)
-      },
-      (error) => {
-        setIsLoaded(true)
-        setError(error)
-      }
-    )
-  }, [props.userId])
-
+  const user = new UserTiming(data)
 
   if (error) {
-    return <div>Erreur : {error.message}</div>
+    return <div>Une erreur est survenue lors du chargement des données</div>
   } else if (!isLoaded) {
     return <div>Chargement...</div>
   } else {

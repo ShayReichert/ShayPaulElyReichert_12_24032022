@@ -12,6 +12,7 @@ import {
 
 export function getData(user, dataType) {
   if (useDataFromMock) {
+    console.log('MOCK MODE ON')
     return getDataFromMock(dataType)
   } else {
     return getDataFromAPI(user, dataType)

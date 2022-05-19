@@ -1,6 +1,5 @@
 import './Home.scss'
-import React, { useState, useEffect } from 'react'
-import { getUserMainData } from '../../services/UserService'
+import { useApiRequest } from '../../services/ApiService'
 import { UserInfos } from '../../models/UserInfos'
 import {
   Layout,
@@ -11,27 +10,15 @@ import {
   ChartScore,
   CardNutriment,
 } from '../../components'
-
 import { userId } from '../../utils/scripts/config'
 import { getData } from '../../utils/scripts/helpers'
 
 function Home() {
-  const [error, setError] = useState(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [user, setUser] = useState({})
+  const { data, error, isLoaded } = useApiRequest(
+    `${process.env.REACT_APP_API_ROOT}/user/${userId}`
+  )
 
-  useEffect(() => {
-    getUserMainData(userId).then(
-      (result) => {
-        setUser(new UserInfos(result.data))
-        setIsLoaded(true)
-      },
-      (error) => {
-        setIsLoaded(true)
-        setError(error)
-      }
-    )
-  }, [userId])
+  const user = new UserInfos(data)
 
   let firstName = ''
   let nutrimentInfos = []
@@ -42,7 +29,7 @@ function Home() {
     nutrimentInfos = getData(user, 'nutrimentInfos')
     nutrimentData.push(getData(user, 'nutrimentData'))
   } else if (error) {
-    console.error(error.message)
+    console.error(error)
   }
 
   return (

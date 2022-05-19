@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { getUserActivity } from '../../services/UserService'
+import { useApiRequest } from '../../services/ApiService'
 import { UserActivityDaily } from '../../models/UserActivityDaily'
 import { getData } from '../../utils/scripts/helpers'
 import './ChartActivityDaily.scss'
@@ -16,25 +15,14 @@ import {
 } from 'recharts'
 
 function ChartActivityDaily(props) {
-  const [error, setError] = useState(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [user, setUser] = useState({})
+  const { data, error, isLoaded } = useApiRequest(
+    `${process.env.REACT_APP_API_ROOT}/user/${props.userId}/activity`
+  )
 
-  useEffect(() => {
-    getUserActivity(props.userId).then(
-      (result) => {
-        setUser(new UserActivityDaily(result.data))
-        setIsLoaded(true)
-      },
-      (error) => {
-        setIsLoaded(true)
-        setError(error)
-      }
-    )
-  }, [props.userId])
+  const user = new UserActivityDaily(data)
 
   if (error) {
-    return <div>Erreur : {error.message}</div>
+    return <div>Une erreur est survenue lors du chargement des données</div>
   } else if (!isLoaded) {
     return <div>Chargement...</div>
   } else {

@@ -1,31 +1,19 @@
-import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { getUserMainData } from '../../services/UserService'
+import { useApiRequest } from '../../services/ApiService'
 import { UserInfos } from '../../models/UserInfos'
 import { getData } from '../../utils/scripts/helpers'
 import './ChartScore.scss'
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts'
 
 function ChartScore(props) {
-  const [error, setError] = useState(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [user, setUser] = useState({})
+  const { data, error, isLoaded } = useApiRequest(
+    `${process.env.REACT_APP_API_ROOT}/user/${props.userId}`
+  )
 
-  useEffect(() => {
-    getUserMainData(props.userId).then(
-      (result) => {
-        setUser(new UserInfos(result.data))
-        setIsLoaded(true)
-      },
-      (error) => {
-        setIsLoaded(true)
-        setError(error)
-      }
-    )
-  }, [props.userId])
+  const user = new UserInfos(data)
 
   if (error) {
-    return <div>Erreur : {error.message}</div>
+    return <div>Une erreur est survenue lors du chargement des données</div>
   } else if (!isLoaded) {
     return <div>Chargement...</div>
   } else {
