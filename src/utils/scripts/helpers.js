@@ -1,4 +1,4 @@
-import { useDataFromMock } from './config'
+import '../../config'
 import {
   mockDataFirstName,
   mockDataActivityDaily,
@@ -11,7 +11,7 @@ import {
 } from '../../mocks/chartsData'
 
 export function getData(user, dataType) {
-  if (useDataFromMock) {
+  if (global.config.useDataFromMock) {
     console.log('MOCK MODE ON')
     return getDataFromMock(dataType)
   } else {

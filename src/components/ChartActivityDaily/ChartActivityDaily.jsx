@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { useApiRequest } from '../../services/ApiService'
 import { UserActivityDaily } from '../../models/UserActivityDaily'
 import { getData } from '../../utils/scripts/helpers'
+import { ErrorMessage } from '../../components'
 import './ChartActivityDaily.scss'
 import {
   ResponsiveContainer,
@@ -22,7 +23,7 @@ function ChartActivityDaily(props) {
   const user = new UserActivityDaily(data)
 
   if (error) {
-    return <div>Une erreur est survenue lors du chargement des données</div>
+    return <ErrorMessage />
   } else if (!isLoaded) {
     return <div>Chargement...</div>
   } else {

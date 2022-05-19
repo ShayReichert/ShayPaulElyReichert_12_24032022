@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { useApiRequest } from '../../services/ApiService'
 import { UserPerformance } from '../../models/UserPerformance'
 import { getData } from '../../utils/scripts/helpers'
+import { ErrorMessage } from '../../components'
 import './ChartPerformance.scss'
 import {
   Radar,
@@ -19,7 +20,7 @@ function ChartPerformance(props) {
   const user = new UserPerformance(data)
 
   if (error) {
-    return <div>Une erreur est survenue lors du chargement des données</div>
+    return <ErrorMessage />
   } else if (!isLoaded) {
     return <div>Chargement...</div>
   } else {

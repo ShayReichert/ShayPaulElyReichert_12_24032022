@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { useApiRequest } from '../../services/ApiService'
 import { UserInfos } from '../../models/UserInfos'
 import { getData } from '../../utils/scripts/helpers'
+import { ErrorMessage } from '../../components'
 import './ChartScore.scss'
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts'
 
@@ -13,7 +14,7 @@ function ChartScore(props) {
   const user = new UserInfos(data)
 
   if (error) {
-    return <div>Une erreur est survenue lors du chargement des données</div>
+    return <ErrorMessage />
   } else if (!isLoaded) {
     return <div>Chargement...</div>
   } else {

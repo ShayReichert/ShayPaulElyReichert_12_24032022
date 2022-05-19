@@ -1,23 +1,14 @@
 import './Home.scss'
 import { useApiRequest } from '../../services/ApiService'
 import { UserInfos } from '../../models/UserInfos'
-import {
-  Layout,
-  MenuVertical,
-  ChartActivityDaily,
-  ChartTiming,
-  ChartPerformance,
-  ChartScore,
-  CardNutriment,
-} from '../../components'
-import { userId } from '../../utils/scripts/config'
+import { Layout, MenuVertical, AllCharts } from '../../components'
 import { getData } from '../../utils/scripts/helpers'
+import '../../config'
 
 function Home() {
   const { data, error, isLoaded } = useApiRequest(
-    `${process.env.REACT_APP_API_ROOT}/user/${userId}`
+    `${process.env.REACT_APP_API_ROOT}/user/${global.config.userId}`
   )
-
   const user = new UserInfos(data)
 
   let firstName = ''
@@ -44,35 +35,11 @@ function Home() {
             Félicitation ! Vous avez explosé vos objectifs hier 👏
           </p>
         </section>
-
-        <section className="charts-section">
-          <div className="left">
-            <div className="left-top">
-              <ChartActivityDaily userId={userId} />
-            </div>
-            <div className="left-bottom">
-              <ChartTiming userId={userId} />
-
-              <ChartPerformance userId={userId} />
-
-              <ChartScore userId={userId} />
-            </div>
-          </div>
-
-          <div className="right">
-            <ul className="calory-wrapper">
-              {nutrimentInfos.map((nutriment, key) => {
-                return (
-                  <CardNutriment
-                    nutriment={nutriment}
-                    count={nutrimentData[0][nutriment.key]}
-                    key={key}
-                  />
-                )
-              })}
-            </ul>
-          </div>
-        </section>
+        <AllCharts
+          userId={global.config.userId}
+          nutrimentInfos={nutrimentInfos}
+          nutrimentData={nutrimentData}
+        />
       </div>
     </Layout>
   )

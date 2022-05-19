@@ -1,5 +1,5 @@
-import './IconActivity.scss'
 import PropTypes from 'prop-types'
+import './IconActivity.scss'
 
 function IconActivity(props) {
   const { name, src } = props.icon

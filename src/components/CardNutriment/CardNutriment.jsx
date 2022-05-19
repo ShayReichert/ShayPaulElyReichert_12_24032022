@@ -1,5 +1,5 @@
-import './CardNutriment.scss'
 import PropTypes from 'prop-types'
+import './CardNutriment.scss'
 
 function CardNutriment(props) {
   const { name, src, alt, unit } = props.nutriment

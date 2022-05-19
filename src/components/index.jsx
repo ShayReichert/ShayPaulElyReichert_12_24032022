@@ -2,6 +2,7 @@
 import CardNutriment from './CardNutriment/CardNutriment'
 
 //  Charts
+import AllCharts from './AllCharts/AllCharts'
 import ChartActivityDaily from './ChartActivityDaily/ChartActivityDaily'
 import ChartPerformance from './ChartPerformance/ChartPerformance'
 import ChartScore from './ChartScore/ChartScore'
@@ -17,8 +18,12 @@ import Layout from './Layout/Layout'
 import MenuHeader from './MenuHeader/MenuHeader'
 import MenuVertical from './MenuVertical/MenuVertical'
 
+// Other
+import ErrorMessage from './ErrorMessage/ErrorMessage'
+
 export {
   CardNutriment,
+  AllCharts,
   ChartActivityDaily,
   ChartPerformance,
   ChartScore,
@@ -27,4 +32,5 @@ export {
   Layout,
   MenuHeader,
   MenuVertical,
+  ErrorMessage,
 }

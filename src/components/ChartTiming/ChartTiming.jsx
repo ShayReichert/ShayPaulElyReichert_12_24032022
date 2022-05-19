@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { useApiRequest } from '../../services/ApiService'
 import { UserTiming } from '../../models/UserTiming'
 import { getData } from '../../utils/scripts/helpers'
+import { ErrorMessage } from '../../components'
 import './ChartTiming.scss'
 import {
   LineChart,
@@ -20,7 +21,7 @@ function ChartTiming(props) {
   const user = new UserTiming(data)
 
   if (error) {
-    return <div>Une erreur est survenue lors du chargement des données</div>
+    return <ErrorMessage />
   } else if (!isLoaded) {
     return <div>Chargement...</div>
   } else {

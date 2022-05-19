@@ -1,0 +1,53 @@
+@import '../../utils/styles/index.scss';
+
+.charts-section {
+  display: flex;
+  justify-content: space-between;
+
+  @include on-laptop() {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    width: 58vw;
+
+    @include on-laptop() {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .left-top {
+      margin-bottom: 3rem;
+    }
+
+    .left-bottom {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .right {
+    width: 22vw;
+
+    @include on-laptop() {
+      display: flex;
+      width: 100%;
+    }
+
+    .calory-wrapper {
+      margin: 0 3rem;
+
+      @include on-laptop() {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 5rem 0 0;
+      }
+    }
+  }
+}
