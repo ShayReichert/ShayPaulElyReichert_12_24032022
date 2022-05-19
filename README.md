@@ -8,6 +8,7 @@ SportSee is an application for tracking physical activity as well as daily calor
 Make sure you have installed the following prerequisites on your development machine:
 * Git - [Download & Install Git](https://git-scm.com/downloads).
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager (we recommend node version 12 or higher).
+* Recommended code editor: [VSCode](https://code.visualstudio.com/)
 
 
 ## II. Before You Begin
@@ -39,3 +40,6 @@ $ npm install
 ```
 $ npm start
 ```
+
+### Launch React app:
+Go to http://localhost:3001/ and enjoy ! :partying_face:
