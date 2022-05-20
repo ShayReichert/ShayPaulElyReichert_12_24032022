@@ -3,11 +3,11 @@ import { useApiRequest } from '../../services/ApiService'
 import { UserInfos } from '../../models/UserInfos'
 import { Layout, MenuVertical, AllCharts } from '../../components'
 import { getData } from '../../utils/scripts/helpers'
-import '../../config'
+import { globalConfig } from '../../config'
 
 function Home() {
   const { data, error, isLoaded } = useApiRequest(
-    `${process.env.REACT_APP_API_ROOT}/user/${global.config.userId}`
+    `${process.env.REACT_APP_API_ROOT}/user/${globalConfig.userId}`
   )
   const user = new UserInfos(data)
 
@@ -36,7 +36,7 @@ function Home() {
           </p>
         </section>
         <AllCharts
-          userId={global.config.userId}
+          userId={globalConfig.userId}
           nutrimentInfos={nutrimentInfos}
           nutrimentData={nutrimentData}
         />
