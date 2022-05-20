@@ -33,9 +33,9 @@ function getDataFromMock(dataType) {
       return mockDataScore
     case 'ScorePercentage':
       return mockDataScorePercentage
-    case 'nutrimentInfos':
+    case 'NutrimentInfos':
       return mockInfosNutriment
-    case 'nutrimentData':
+    case 'NutrimentData':
       return mockDataNutriment
     case '':
       console.error("Empty 'dataType' argument")
@@ -58,9 +58,9 @@ function getDataFromAPI(user, dataType) {
       return user.getScoreData()
     case 'ScorePercentage':
       return user.getScorePercentage()
-    case 'nutrimentInfos':
+    case 'NutrimentInfos':
       return user.getnutrimentInfos()
-    case 'nutrimentData':
+    case 'NutrimentData':
       return user.keyData
     case '':
       console.error("Empty 'dataType' argument")

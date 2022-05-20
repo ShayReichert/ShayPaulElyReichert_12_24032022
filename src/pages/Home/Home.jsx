@@ -17,8 +17,8 @@ function Home() {
 
   if (isLoaded && !error) {
     firstName = getData(user, 'FirstName')
-    nutrimentInfos = getData(user, 'nutrimentInfos')
-    nutrimentData.push(getData(user, 'nutrimentData'))
+    nutrimentInfos = getData(user, 'NutrimentInfos')
+    nutrimentData.push(getData(user, 'NutrimentData'))
   } else if (error) {
     console.error(error)
   }
