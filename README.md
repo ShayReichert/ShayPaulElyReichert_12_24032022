@@ -41,5 +41,4 @@ $ npm install
 $ npm start
 ```
 
-### Launch React app:
 Go to http://localhost:3001/ and enjoy ! :partying_face:
