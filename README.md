@@ -21,27 +21,29 @@ To do this, follow these steps:
 
 ## III. Launch the application locally
 
-### Fork this repository
+### - Fork this repository
 
-### Cloning The GitHub Repository:
+Click the fork button at the top of this page.
+
+### - Cloning The GitHub Repository:
 
 ```
 git clone https://github.com/ShayReichert/ShayPaulElyReichert_12_24032022
 ```
 
-### Go to the cloned repo:
+### - Go to the cloned repo:
 ```
 cd ShayPaulElyReichert_12_24032022
 ```
 
-### Install npm packages:
+### - Install npm packages:
 ```
-$ npm install
-```
-
-### Launch React app:
-```
-$ npm start
+npm install
 ```
 
-### Go to http://localhost:3001/ and enjoy ! :partying_face:
+### - Launch React app:
+```
+npm start
+```
+
+### - Go to http://localhost:3001/ and enjoy ! :partying_face:
