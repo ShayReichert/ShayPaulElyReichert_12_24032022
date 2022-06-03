@@ -5,6 +5,11 @@ import { Layout, MenuVertical, AllCharts } from '../../components'
 import { getData } from '../../utils/scripts/helpers'
 import { globalConfig } from '../../config'
 
+/**
+ * The Home Page.
+ * @component
+ * @return { HTMLElement }
+ */
 function Home() {
   const { data, error, isLoaded } = useApiRequest(
     `${process.env.REACT_APP_API_ROOT}/user/${globalConfig.userId}`
@@ -12,13 +17,13 @@ function Home() {
   const user = new UserInfos(data)
 
   let firstName = ''
-  let nutrimentInfos = []
-  let nutrimentData = []
+  let nutrientInfos = []
+  let nutrientData = []
 
   if (isLoaded && !error) {
     firstName = getData(user, 'FirstName')
-    nutrimentInfos = getData(user, 'NutrimentInfos')
-    nutrimentData.push(getData(user, 'NutrimentData'))
+    nutrientInfos = getData(user, 'NutrientInfos')
+    nutrientData.push(getData(user, 'NutrientData'))
   } else if (error) {
     console.error(error)
   }
@@ -37,8 +42,8 @@ function Home() {
         </section>
         <AllCharts
           userId={globalConfig.userId}
-          nutrimentInfos={nutrimentInfos}
-          nutrimentData={nutrimentData}
+          nutrientInfos={nutrientInfos}
+          nutrientData={nutrientData}
         />
       </div>
     </Layout>

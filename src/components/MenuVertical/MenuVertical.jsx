@@ -24,6 +24,11 @@ const activitiesIcons = [
   },
 ]
 
+/**
+ * Component for generate the vertical menu.
+ * @component
+ * @return { HTMLElement }
+ */
 function MenuVertical() {
   return (
     <div className="menu-vertical-wrapper">

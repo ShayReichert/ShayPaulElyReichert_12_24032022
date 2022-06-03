@@ -6,10 +6,16 @@ import {
   ChartTiming,
   ChartPerformance,
   ChartScore,
-  CardNutriment,
+  CardNutrient,
   ErrorMessage,
 } from '../../components'
 
+/**
+ * Contains all graphics.
+ * @component
+ * @param { * } props
+ * @return { HTMLElement }
+ */
 function AllCharts(props) {
   const { data, error, isLoaded } = useApiRequest(
     `${process.env.REACT_APP_API_ROOT}/user/${props.userId}`
@@ -37,11 +43,11 @@ function AllCharts(props) {
 
         <div className="right">
           <ul className="calory-wrapper">
-            {props.nutrimentInfos.map((nutriment, key) => {
+            {props.nutrientInfos.map((nutrient, key) => {
               return (
-                <CardNutriment
-                  nutriment={nutriment}
-                  count={props.nutrimentData[0][nutriment.key]}
+                <CardNutrient
+                  nutrient={nutrient}
+                  count={props.nutrientData[0][nutrient.key]}
                   key={key}
                 />
               )
@@ -57,12 +63,12 @@ export default AllCharts
 
 AllCharts.propTypes = {
   userId: PropTypes.number.isRequired,
-  nutrimentInfos: PropTypes.array.isRequired,
-  nutrimentData: PropTypes.array.isRequired,
+  nutrientInfos: PropTypes.array.isRequired,
+  nutrientData: PropTypes.array.isRequired,
 }
 
 AllCharts.defaultProps = {
   userId: 0,
-  nutrimentInfos: [],
-  nutrimentData: [],
+  nutrientInfos: [],
+  nutrientData: [],
 }

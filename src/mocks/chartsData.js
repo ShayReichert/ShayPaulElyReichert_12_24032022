@@ -3,7 +3,7 @@ import chicken from '../assets/chicken.svg'
 import apple from '../assets/apple.svg'
 import cheeseburger from '../assets/cheeseburger.svg'
 
-//  All Charts data (right)
+//  All Charts data (left)
 
 export const mockDataFirstName = 'Thomas'
 
@@ -133,9 +133,9 @@ export const mockDataScore = [
 
 export const mockDataScorePercentage = 33
 
-// Nutriments Cards data (left)
+// Nutrients Cards data (right)
 
-export const mockInfosNutriment = [
+export const mockInfosNutrient = [
   {
     name: 'calories',
     src: energy,
@@ -166,7 +166,7 @@ export const mockInfosNutriment = [
   },
 ]
 
-export const mockDataNutriment = {
+export const mockDataNutrient = {
   calorieCount: 1600,
   proteinCount: 100,
   carbohydrateCount: 200,

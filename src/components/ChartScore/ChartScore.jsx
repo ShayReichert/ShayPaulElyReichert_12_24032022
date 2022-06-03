@@ -6,6 +6,12 @@ import { ErrorMessage } from '../../components'
 import './ChartScore.scss'
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts'
 
+/**
+ * Component for generate a chart with the user's goal completion rate.
+ * @component
+ * @param { * } props
+ * @return { HTMLElement }
+ */
 function ChartScore(props) {
   const { data, error, isLoaded } = useApiRequest(
     `${process.env.REACT_APP_API_ROOT}/user/${props.userId}`

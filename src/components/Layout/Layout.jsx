@@ -2,6 +2,12 @@ import PropTypes from 'prop-types'
 import MenuHeader from '../MenuHeader/MenuHeader'
 import './Layout.scss'
 
+/**
+ * Component for generate the default layout of the application.
+ * @component
+ * @param { * } props
+ * @return { HTMLElement }
+ */
 function Layout(props) {
   return (
     <div className="page-wrapper">

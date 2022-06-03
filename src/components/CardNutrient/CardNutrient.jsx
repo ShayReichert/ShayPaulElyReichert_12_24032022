@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types'
-import './CardNutriment.scss'
+import './CardNutrient.scss'
 
-function CardNutriment(props) {
-  const { name, src, alt, unit } = props.nutriment
+/**
+ * Component for generate a card with nutrient info.
+ * @component
+ * @param { * } props
+ * @return { HTMLElement }
+ */
+function CardNutrient(props) {
+  const { name, src, alt, unit } = props.nutrient
 
   return (
     <li className={`calory-card ${alt}-card`}>
@@ -22,9 +28,9 @@ function CardNutriment(props) {
   )
 }
 
-export default CardNutriment
+export default CardNutrient
 
-CardNutriment.propTypes = {
+CardNutrient.propTypes = {
   name: PropTypes.string,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
@@ -32,7 +38,7 @@ CardNutriment.propTypes = {
   count: PropTypes.number.isRequired,
 }
 
-CardNutriment.defaultProps = {
+CardNutrient.defaultProps = {
   name: '',
   src: '',
   alt: '',

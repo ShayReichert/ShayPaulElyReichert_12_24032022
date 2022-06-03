@@ -6,8 +6,8 @@ import {
   mockDataPerformance,
   mockDataScore,
   mockDataScorePercentage,
-  mockInfosNutriment,
-  mockDataNutriment,
+  mockInfosNutrient,
+  mockDataNutrient,
 } from '../../mocks/chartsData'
 
 export function getData(user, dataType) {
@@ -33,10 +33,10 @@ function getDataFromMock(dataType) {
       return mockDataScore
     case 'ScorePercentage':
       return mockDataScorePercentage
-    case 'NutrimentInfos':
-      return mockInfosNutriment
-    case 'NutrimentData':
-      return mockDataNutriment
+    case 'NutrientInfos':
+      return mockInfosNutrient
+    case 'NutrientData':
+      return mockDataNutrient
     case '':
       console.error("Empty 'dataType' argument")
       break
@@ -58,9 +58,9 @@ function getDataFromAPI(user, dataType) {
       return user.getScoreData()
     case 'ScorePercentage':
       return user.getScorePercentage()
-    case 'NutrimentInfos':
-      return user.getnutrimentInfos()
-    case 'NutrimentData':
+    case 'NutrientInfos':
+      return user.getNutrientInfos()
+    case 'NutrientData':
       return user.keyData
     case '':
       console.error("Empty 'dataType' argument")

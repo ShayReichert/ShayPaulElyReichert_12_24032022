@@ -15,6 +15,12 @@ import {
   Legend,
 } from 'recharts'
 
+/**
+ * Component for generate a chart with the daily activities of the user.
+ * @component
+ * @param { * } props
+ * @return { HTMLElement }
+ */
 function ChartActivityDaily(props) {
   const { data, error, isLoaded } = useApiRequest(
     `${process.env.REACT_APP_API_ROOT}/user/${props.userId}/activity`

@@ -1,5 +1,10 @@
 import './ErrorMessage.scss'
 
+/**
+ * Component for generate the default error message.
+ * @component
+ * @return { HTMLElement }
+ */
 function ErrorMessage() {
   return (
     <div className="error-message">

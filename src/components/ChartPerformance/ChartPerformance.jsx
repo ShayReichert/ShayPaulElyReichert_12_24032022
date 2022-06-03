@@ -12,6 +12,12 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
+/**
+ * Component for generate a chart with different user performance.
+ * @component
+ * @param { * } props
+ * @return { HTMLElement }
+ */
 function ChartPerformance(props) {
   const { data, error, isLoaded } = useApiRequest(
     `${process.env.REACT_APP_API_ROOT}/user/${props.userId}/performance`

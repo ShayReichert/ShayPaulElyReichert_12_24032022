@@ -1,6 +1,11 @@
 import './MenuHeader.scss'
 import logo from '../../assets/logo.svg'
 
+/**
+ * Component for generate the header menu.
+ * @component
+ * @return { HTMLElement }
+ */
 function MenuHeader() {
   return (
     <header className="header">

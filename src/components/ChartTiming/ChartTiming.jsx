@@ -13,6 +13,12 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
+/**
+ * Component for generate a chart with the average duration of the user's daily sessions.
+ * @component
+ * @param { * } props
+ * @return { HTMLElement }
+ */
 function ChartTiming(props) {
   const { data, error, isLoaded } = useApiRequest(
     `${process.env.REACT_APP_API_ROOT}/user/${props.userId}/average-sessions`

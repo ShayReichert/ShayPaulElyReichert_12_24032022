@@ -1,5 +1,5 @@
 //  Cards
-import CardNutriment from './CardNutriment/CardNutriment'
+import CardNutrient from './CardNutrient/CardNutrient'
 
 //  Charts
 import AllCharts from './AllCharts/AllCharts'
@@ -22,7 +22,7 @@ import MenuVertical from './MenuVertical/MenuVertical'
 import ErrorMessage from './ErrorMessage/ErrorMessage'
 
 export {
-  CardNutriment,
+  CardNutrient,
   AllCharts,
   ChartActivityDaily,
   ChartPerformance,
