@@ -17,7 +17,7 @@ import {
  * @return { HTMLElement }
  */
 function AllCharts(props) {
-  const { data, error, isLoaded } = useApiRequest(
+  const { error, isLoaded } = useApiRequest(
     `${process.env.REACT_APP_API_ROOT}/user/${props.userId}`
   )
 
