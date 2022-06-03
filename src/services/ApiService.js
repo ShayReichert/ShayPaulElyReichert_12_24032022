@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react'
 
+/**
+ * Function to make API calls, manage response and errors.
+ * @param { String } url
+ * @return { (Boolean | Error) } error
+ * @return { Boolean } isLoaded
+ * @return { Object } data
+ */
 export function useApiRequest(url) {
   const [data, setData] = useState({})
   const [isLoaded, setIsLoaded] = useState(false)

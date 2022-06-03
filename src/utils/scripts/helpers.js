@@ -10,6 +10,13 @@ import {
   mockDataNutrient,
 } from '../../mocks/chartsData'
 
+/**
+ * Function to fetch data from mock or from API according to the settings of the global configuration.
+ * @param { Object } user
+ * @param { String } dataType
+ * @return { Function(dataType<String>) } getDataFromMock
+ * @return { Function(user<Object>, dataType<String>) } getDataFromAPI
+ */
 export function getData(user, dataType) {
   if (globalConfig.useDataFromMock) {
     console.log('MOCK MODE ON')
@@ -19,6 +26,11 @@ export function getData(user, dataType) {
   }
 }
 
+/**
+ * Function to retrieve data from mock.
+ * @param { String } dataType
+ * @return { String | Array | Number | Object } getDataFromMock
+ */
 function getDataFromMock(dataType) {
   switch (dataType) {
     case 'FirstName':
@@ -45,6 +57,12 @@ function getDataFromMock(dataType) {
   }
 }
 
+/**
+ * Function to retrieve data from API.
+ * @param { Object } user
+ * @param { String } dataType
+ * @return { String | Array | Number } getDataFromAPI
+ */
 function getDataFromAPI(user, dataType) {
   switch (dataType) {
     case 'FirstName':
