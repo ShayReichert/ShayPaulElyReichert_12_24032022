@@ -11,7 +11,7 @@ import {
 } from '../../mocks/chartsData'
 
 /**
- * Fetch data from mock or from API according to the settings of the global configuration.
+ * Retrieve data from mock or from API according to the settings of the global configuration.
  * @param { Object } user
  * @param { String } dataType
  * @return { Function(dataType<String>) } getDataFromMock

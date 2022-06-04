@@ -17,6 +17,7 @@ export function useApiRequest(url) {
       try {
         const response = await fetch(url)
         const result = await response.json()
+
         if (result === 'can not get user') {
           console.error(result)
           setError(result)
@@ -27,8 +28,10 @@ export function useApiRequest(url) {
         console.error(error)
         setError(error)
       }
+
       setIsLoaded(true)
     }
+
     fetchData()
   }, [url, setData])
 
