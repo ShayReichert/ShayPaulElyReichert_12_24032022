@@ -25,15 +25,15 @@ To do this, follow these steps:
 
 Click the fork button at the top of this page.
 
-### - Cloning The GitHub Repository:
+### - Clone this new repo on your computer:
 
 ```
-git clone https://github.com/ShayReichert/ShayPaulElyReichert_12_24032022
+git clone https://github.com/<YourUserName>/<PathToTheRepo>
 ```
 
 ### - Go to the cloned repo:
 ```
-cd ShayPaulElyReichert_12_24032022
+cd <NameOfTheProject>
 ```
 
 ### - Install npm packages:
