@@ -19,7 +19,7 @@ import {
  */
 export function getData(user, dataType) {
   if (globalConfig.useDataFromMock) {
-    console.log('MOCK MODE ON')
+    console.log('MOCK MODE')
     return getDataFromMock(dataType)
   } else {
     return getDataFromAPI(user, dataType)
