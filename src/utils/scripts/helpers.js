@@ -11,7 +11,7 @@ import {
 } from '../../mocks/chartsData'
 
 /**
- * Function to fetch data from mock or from API according to the settings of the global configuration.
+ * Fetch data from mock or from API according to the settings of the global configuration.
  * @param { Object } user
  * @param { String } dataType
  * @return { Function(dataType<String>) } getDataFromMock
@@ -27,7 +27,7 @@ export function getData(user, dataType) {
 }
 
 /**
- * Function to retrieve data from mock.
+ * Retrieve data from mock.
  * @param { String } dataType
  * @return { String | Array | Number | Object } getDataFromMock
  */
@@ -58,7 +58,7 @@ function getDataFromMock(dataType) {
 }
 
 /**
- * Function to retrieve data from API.
+ * Retrieve data from API.
  * @param { Object } user
  * @param { String } dataType
  * @return { String | Array | Number } getDataFromAPI
