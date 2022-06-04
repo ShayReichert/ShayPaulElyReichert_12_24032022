@@ -2,7 +2,6 @@
 
 SportSee is an application for tracking physical activity as well as daily calorie intake and expenditure.
 
-[Live demo](#)
 
 ## I. Prerequisites
 Make sure you have installed the following prerequisites on your development machine:
@@ -21,20 +20,17 @@ To do this, follow these steps:
 
 ## III. Launch the application locally
 
-### - Fork this repository
+### - Fork this repository.
 
 Click the fork button at the top of this page.
 
-### - Clone this new repo on your computer:
+### - Clone your new repo on your computer:
 
 ```
 git clone https://github.com/<YourUserName>/<PathToTheRepo>
 ```
 
-### - Go to the cloned repo:
-```
-cd <NameOfTheProject>
-```
+### - Open it with VSCode.
 
 ### - Install npm packages:
 ```
