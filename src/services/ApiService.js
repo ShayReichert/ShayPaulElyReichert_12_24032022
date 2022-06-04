@@ -33,7 +33,7 @@ export function useApiRequest(url) {
     }
 
     fetchData()
-  }, [url, setData])
+  }, [url])
 
   return { error, isLoaded, data }
 }
